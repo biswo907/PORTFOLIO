@@ -30,6 +30,13 @@ import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 
+
+import crypto_img from "./crypto_img.png";
+import note_img from "./note_img.png";
+import college_img from "./college_img.png";
+
+
+
 export {
   logo,
   backend,
@@ -57,6 +64,9 @@ export {
   starbucks,
   tesla,
   carrent,
+  crypto_img,
+  note_img,
+  college_img,
   jobit,
   tripguide,
 };

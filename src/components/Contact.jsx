@@ -41,19 +41,11 @@ const Contact = () => {
     e.preventDefault();
     const newErrors = validate();
     if (Object.keys(newErrors).length === 0) {
-      setLoading(true);
-      // Simulate form submission
-      setTimeout(() => {
-        console.log('Form submitted:', formData);
-        setLoading(false);
-        setFormData({ name: '', email: '', description: '' });
-        setErrors({});
-      }, 1000);
+      onSubmit(e);
     } else {
       setErrors(newErrors);
     }
   };
-
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -63,37 +55,32 @@ const Contact = () => {
 
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
-    const newErrors = validate();
-    if (Object.keys(newErrors).length === 0) {
 
+    try {
+      setLoading(true);
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: json
+      });
+      const data = await res.json();
 
-      try {
-        setLoading(true);
-        const res = await fetch("https://api.web3forms.com/submit", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json"
-          },
-          body: json
-        });
-        const data = await res.json();
-
-        if (data.success) {
-          setLoading(false);
-          setFormData({ name: '', email: '', description: '' });
-          setErrors({});
-          console.log("Success", data);
-          alert('Form submitted successfully!');
-        }
-      } catch (error) {
+      if (data.success) {
         setLoading(false);
-        console.error("Error:", error);
-        alert("Opps !! Something went Wrong");
+        setFormData({ name: '', email: '', description: '' });
+        setErrors({});
+        console.log("Success", data);
+        alert('Form submitted successfully!');
       }
+    } catch (error) {
+      setLoading(false);
+      console.error("Error:", error);
+      alert("Opps !! Something went Wrong");
     }
   };
-
 
   return (
     <div className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}>
@@ -104,7 +91,7 @@ const Contact = () => {
         <p className={styles.sectionSubText}>Get in touch</p>
         <h3 className={styles.sectionHeadText}>Contact.</h3>
 
-        <form ref={formRef} onSubmit={onSubmit} className='mt-12 flex flex-col gap-8'>
+        <form ref={formRef} onSubmit={handleSubmit} className='mt-12 flex flex-col gap-8'>
           <label className='flex flex-col'>
             <span className='text-white font-medium mb-4'>Your Name</span>
             <input
@@ -145,8 +132,7 @@ const Contact = () => {
             type='submit'
             className='bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary'
           >
-            {/* {loading ? "Sending..." : "Send"} */}
-            Send
+            {loading ? "Sending..." : "Send"}
           </button>
         </form>
       </motion.div>

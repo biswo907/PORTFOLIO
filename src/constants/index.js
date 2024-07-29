@@ -23,6 +23,9 @@ import {
   jobit,
   tripguide,
   threejs,
+  crypto_img,
+  note_img,
+  college_img
 } from "../assets";
 
 export const navLinks = [
@@ -198,37 +201,37 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "Live Crypto Tracker Website",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "Developed a dynamic and responsive live cryptocurrency tracker website using React.js, leveraging the CoinGecko API for real-time data retrieval. The website features a user-friendly interface that displays the latest cryptocurrency prices, market capitalizations, and other essential metrics. Key functionalities include search capabilities, real-time updates, and detailed views of individual cryptocurrency performance. Implemented state management with React hooks and optimized the application for performance and scalability.",
     tags: [
       {
         name: "react",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "CoinGecko ",
         color: "green-text-gradient",
       },
       {
-        name: "tailwind",
+        name: "context_api",
         color: "pink-text-gradient",
       },
     ],
-    image: carrent,
-    source_code_link: "https://github.com/",
+    image: crypto_img,
+    source_code_link: "https://crypto-price-tracking-biswo.netlify.app/",
   },
   {
-    name: "Job IT",
+    name: "To-Do List Application",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "Created a versatile and aesthetically pleasing To-Do List application using React.js and Mantine UI, featuring both light and dark modes. The application includes essential functionalities such as adding, editing, and deleting tasks, with data persistence achieved through local storage. The user interface is built with Mantine UI components, ensuring a modern and intuitive user experience.",
     tags: [
       {
         name: "react",
         color: "blue-text-gradient",
       },
       {
-        name: "restapi",
+        name: "Mantine",
         color: "green-text-gradient",
       },
       {
@@ -236,29 +239,29 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: jobit,
-    source_code_link: "https://github.com/",
+    image: note_img,
+    source_code_link: "https://biswo-todoapp.netlify.app/",
   },
   {
-    name: "Trip Guide",
+    name: "University Showcase Website",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "Designed and developed a static University Showcase website using HTML and CSS. The website features key sections such as Courses, About, Contact, and Blog, providing a comprehensive overview of the university. Focused on creating a visually appealing and user-friendly interface with responsive design principles to ensure accessibility across various devices. Implemented clean and structured HTML code coupled with modern CSS styling techniques to enhance the user experience.",
     tags: [
       {
-        name: "nextjs",
+        name: "html",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
+        name: "css",
         color: "green-text-gradient",
       },
       {
-        name: "css",
+        name: "javaScript",
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
+    image: college_img,
+    source_code_link: "https://university-1.netlify.app/",
   },
 ];
 
