@@ -34,6 +34,7 @@ import tripguide from "./tripguide.png";
 import crypto_img from "./crypto_img.png";
 import note_img from "./note_img.png";
 import college_img from "./college_img.png";
+import currency_Converter from "./currency_Converter.png";
 
 
 
@@ -69,4 +70,5 @@ export {
   college_img,
   jobit,
   tripguide,
+  currency_Converter
 };

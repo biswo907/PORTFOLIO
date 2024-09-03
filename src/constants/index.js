@@ -25,7 +25,8 @@ import {
   threejs,
   crypto_img,
   note_img,
-  college_img
+  college_img,
+  currency_Converter
 } from "../assets";
 
 export const navLinks = [
@@ -263,6 +264,29 @@ const projects = [
     image: college_img,
     source_code_link: "https://university-1.netlify.app/",
   },
+
+  {
+    name: "Currency Converter",
+    description:
+      "Built a dynamic currency converter application using React and TanStack Query, integrated with the Frankfurter API for real-time exchange rate data. Leveraged TanStack Query for efficient data fetching, caching, and synchronization, ensuring optimal performance and a seamless user experience. The project showcases expertise in modern React development, advanced state management with TanStack Query, and effective API integration.",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Frankfurter-API ",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "TanStack Query",
+        color: "green-text-gradient",
+      },
+    ],
+    image: currency_Converter,
+    source_code_link: "",
+  },
+
 ];
 
 export { services, technologies, experiences, testimonials, projects };
